@@ -1,8 +1,5 @@
 
-<h1>Add an Object to the Collection<h1>
-
 <h3>
-
  <form method="POST" action="AddObj" id="AddObj" enctype='multipart/form-data'>
  		<div> Location**
 			<BR>
@@ -13,8 +10,10 @@
 	 	<BR>
 	 	*Title: <input type="text" name = "title" value ="" required >
 	 	<BR>
+
+
 		<div>
-			Image Upload
+			Image Upload 
 			<BR>
 			<input type="file" name="pic" accept="image/*" form="AddObj" required>
 		</div>
@@ -26,3 +25,20 @@
 	<p>
 		<a href="/">Go Back to Home</a href>
 	</p>
+
+
+<script>
+	window.onload = function() {
+	  var startPos;
+	  var geoSuccess = function(position) {
+	    startPos = position;
+	    document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+	    document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+	  };
+	  navigator.geolocation.getCurrentPosition(geoSuccess);
+	};
+
+
+
+
+</script>
