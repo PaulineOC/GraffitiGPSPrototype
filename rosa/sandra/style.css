@@ -1,0 +1,29 @@
+body {
+    font-family: 'News Cycle', sans-serif;
+    text-align: center;
+}
+.title {
+  text-align: center;
+}
+
+.sketch {
+  margin: 0 auto;
+  text-align: center;
+  margin:20px;
+}
+
+a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover {
+  /*pink hover*/
+  color:#c33776;
+}
+
+img{
+   display: block;
+   margin: auto;
+}
