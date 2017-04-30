@@ -36,6 +36,9 @@ app.get('/AddObj', function(req,res){
 	res.render('add');
 });
 
+app.get('/addPin', function(req,res){
+	res.render('addPin');
+}
 
 app.get('/view1', function(req,res){
 	res.render('view1');
@@ -50,8 +53,8 @@ app.post('/AddObj',upload.single('pic'),function(req,res) {
 
 	console.log(req.body);
 	var base64 = req.file.buffer.toString('base64');
-	
-	
+
+
 	var newObj = new streetArt({
 		'title': req.body.title.toLowerCase(),
 		'pic': base64,
@@ -73,4 +76,3 @@ app.post('/AddObj',upload.single('pic'),function(req,res) {
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
