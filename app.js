@@ -32,18 +32,52 @@ app.get('/view', function(req,res){
 	res.render('view');
 });
 
-app.get('/add', function(req,res){
+app.get('/addArt', function(req,res){
 	res.render('add');
 });
 
-// after clicking add
-app.post('/addObj',function(req,res){
-	console.log(req.body);
+
+app.get('/view1', function(req,res){
+	res.render('view1');
 });
 
+
+app.get('/view2', function(req,res){
+	res.render('view2');
+});
+
+
+// after clicking add
+app.post('/addObj',function(req,res){
+
+	console.log(req.body);
+
+});
+app.post('/AddObj',upload.single('pic'),function(req,res) {
+
+	console.log(req.body);
+	var base64 = req.file.buffer.toString('base64');
+
+	var newObj = new streetArt({
+		'title': req.body.title,
+		'pic': base64,
+	});
+
+	newObj.loc.push(req.body.startLat);
+	newObj.loc.push(req.body.startLon);
+
+	newObj.save(function(err,item, count){
+		if (err){
+			console.log(err);
+		}
+		else{
+			res.redirect('/');
+		}
+	});
+
+});
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
-// app.listen(8080, '127.0.0.1');

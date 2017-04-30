@@ -1,36 +1,17 @@
-<h3>
+ 
+<form method="POST" action="/AddObj" id="AddObj" enctype='multipart/form-data'>
 
- <form method="POST" action="/addObj" id="addObj" enctype='multipart/form-data'>
-   {{!-- 
- 		<div> Location:
-      <p id = "startLat"> </p>
-      <p id = "startLon"> </p>
-		</div>
- --}}
-	 	<BR>
-	 	Title: <input type="text" name = "title" value ="" required >
-	 	<BR>
+ 	Title: <input type="text" name = "title" value ="" required>
+ 	<input type="text" class="hidden" name="startLat" id="startLat" value="">
+	<input type="text" class="hidden" name="startLon" id="startLon" value="">
+	<div>
+		Image Upload
+		<BR>
+		<input type="file" name="pic" accept="image/*" form="AddObj" >
+	</div>
 
-
-	 	<input type="hidden" name="startLat" id="startLat" value="">
-
-	 	<input type="hidden" name="startLon" id="startLon" value="">
-
- 		<div>
-			Image Upload
-			<BR>
-			<input type="file" name="pic" accept="image/*" form="addObj" required>
-		</div> 
-
-		<input type="submit" value="Submit">
+	<input type="submit" value="Submit" form="AddObj">
 	</form>
-
-</3>
-	<p>
-		<a href="/">Go Back to Home</a href>
-	</p>
-
-
 <script>
 	window.onload = function() {
 	  var startPos;
@@ -38,7 +19,10 @@
 	    startPos = position;
 	    document.getElementById('startLat').value = startPos.coords.latitude;
 	    document.getElementById('startLon').value = startPos.coords.longitude;
+	    // var startLat = document.getElementById('startLat');
+	    // startLat.setAttribute("value", startPos.coords.latitude)
 	  };
+
 	  navigator.geolocation.getCurrentPosition(geoSuccess);
 	};
 </script>

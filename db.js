@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var URLSlugs = require('mongoose-url-slugs');
 var streetArt = new mongoose.Schema({
   title: {type: String, default:''},
-  loc: {type: { type: String } , coordinates: []},
+  loc: {type: Number , coordinates: []},
+
   pic: {type: String, default:''}
 });
 
