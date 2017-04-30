@@ -1,17 +1,23 @@
- 
-<form method="POST" action="/AddObj" id="AddObj" enctype='multipart/form-data'>
 
+
+
+<form method="POST" action="AddObj" id="AddObj" enctype='multipart/form-data'>
  	Title: <input type="text" name = "title" value ="" required>
- 	<input type="text" class="hidden" name="startLat" id="startLat" value="">
-	<input type="text" class="hidden" name="startLon" id="startLon" value="">
+	 <BR>
+	 <input type="hidden"  name="startLat" id="startLat" value="">
+	<input type="hidden"  name="startLon" id="startLon" value="">
+
 	<div>
 		Image Upload
 		<BR>
-		<input type="file" name="pic" accept="image/*" form="AddObj" >
-	</div>
-
-	<input type="submit" value="Submit" form="AddObj">
+		<input type="file" name="pic" accept="image/*" form="AddObj" required>
+		</div>
+		<input type="submit" value="Submit" form="AddObj">
 	</form>
+
+
+
+
 <script>
 	window.onload = function() {
 	  var startPos;
