@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 //For Images
 var fs = require('fs');
 var multer = require('multer');
-//Saves to memory storage 
+//Saves to memory storage
 var upload = multer({ storage: multer.memoryStorage({}) });
 
 //Port setting
@@ -23,6 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// homepage
 app.get('/',function(req,res){
 	res.render('index');
 });
@@ -35,10 +36,10 @@ app.get('/add', function(req,res){
 	res.render('add');
 });
 
-app.post('/addArt',function(req,res){
-
-	console.log("adding object:\n"+req.body);
-
+// after clicking add
+app.post('/addObj',function(req,res){
+	console.log("hi");
+	// console.log("adding object:\n"+req.body);
 });
 
 
@@ -46,3 +47,4 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
+// app.listen(8080, '127.0.0.1');

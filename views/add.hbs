@@ -1,24 +1,23 @@
-
 <h3>
- <form method="POST" action="AddObj" id="AddObj" enctype='multipart/form-data'>
- 		<div> Location**
-			<BR>
-			<textarea name="location" form="AddObj" cols='50' style="font-size:16px;" required></textarea>
+
+ <form method="POST" action="addObj" id="addObj" enctype='multipart/form-data'>
+   
+ 		<div> Location:
+      <p id = "startLat"> </p>
+      <p id = "startLon"> </p>
 		</div>
+
 	 	<BR>
-	 	Username: <input type="text" name = "maker" value ="">
-	 	<BR>
-	 	*Title: <input type="text" name = "title" value ="" required >
+	 	Title: <input type="text" name = "title" value ="" required >
 	 	<BR>
 
-
-		<div>
+		<!-- <div>
 			Image Upload
 			<BR>
 			<input type="file" name="pic" accept="image/*" form="AddObj" required>
-		</div>
+		</div> -->
 
-		<input type="submit" value="Submit" form="AddObj">
+		<input type="submit" value="Submit">
 	</form>
 
 </3>
@@ -38,5 +37,4 @@
 	  };
 	  navigator.geolocation.getCurrentPosition(geoSuccess);
 	};
-
 </script>
