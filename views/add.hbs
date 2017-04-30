@@ -1,21 +1,26 @@
 <h3>
 
- <form method="POST" action="addObj" id="addObj" enctype='multipart/form-data'>
-   
+ <form method="POST" action="/addObj" id="addObj" enctype='multipart/form-data'>
+   {{!-- 
  		<div> Location:
       <p id = "startLat"> </p>
       <p id = "startLon"> </p>
 		</div>
-
+ --}}
 	 	<BR>
 	 	Title: <input type="text" name = "title" value ="" required >
 	 	<BR>
 
-		<!-- <div>
+
+	 	<input type="hidden" name="startLat" id="startLat" value="">
+
+	 	<input type="hidden" name="startLon" id="startLon" value="">
+
+ 		<div>
 			Image Upload
 			<BR>
-			<input type="file" name="pic" accept="image/*" form="AddObj" required>
-		</div> -->
+			<input type="file" name="pic" accept="image/*" form="addObj" required>
+		</div> 
 
 		<input type="submit" value="Submit">
 	</form>
@@ -26,14 +31,13 @@
 	</p>
 
 
-
 <script>
 	window.onload = function() {
 	  var startPos;
 	  var geoSuccess = function(position) {
 	    startPos = position;
-	    document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-	    document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+	    document.getElementById('startLat').value = startPos.coords.latitude;
+	    document.getElementById('startLon').value = startPos.coords.longitude;
 	  };
 	  navigator.geolocation.getCurrentPosition(geoSuccess);
 	};

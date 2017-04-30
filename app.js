@@ -38,8 +38,7 @@ app.get('/add', function(req,res){
 
 // after clicking add
 app.post('/addObj',function(req,res){
-	console.log("hi");
-	// console.log("adding object:\n"+req.body);
+	console.log(req.body);
 });
 
 
